@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="colorspace.cpp" path="/home/mac/FPGA/VitisProjects/colorspace/source/colorspace.cpp"/>
+    <originFiles name="color_convert.hpp" path="/home/mac/FPGA/VitisProjects/colorspace/source/color_convert.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="color_convert_tb.cpp" path="/home/mac/FPGA/VitisProjects/colorspace/source/color_convert_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
