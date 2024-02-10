@@ -1,0 +1,3 @@
+[submodule "PYNQ_JPEG"]
+	path = PYNQ_JPEG
+	url = https://github.com/macshaughnessy3/PYNQ_JPEG.git
