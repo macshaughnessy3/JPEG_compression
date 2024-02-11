@@ -1077,7 +1077,7 @@ extern "C"
 void apatb_color_convert_2_hw(void* __xlx_apatb_param_stream_in_48_V_data_V, void* __xlx_apatb_param_stream_in_48_V_keep_V, void* __xlx_apatb_param_stream_in_48_V_strb_V, void* __xlx_apatb_param_stream_in_48_V_user_V, void* __xlx_apatb_param_stream_in_48_V_last_V, void* __xlx_apatb_param_stream_out_48_V_data_V, void* __xlx_apatb_param_stream_out_48_V_keep_V, void* __xlx_apatb_param_stream_out_48_V_strb_V, void* __xlx_apatb_param_stream_out_48_V_user_V, void* __xlx_apatb_param_stream_out_48_V_last_V)
 {
   static hls::sim::Stream<hls::sim::Byte<8>> port0 {
-    .width = 48,
+    .width = 64,
     .name = "stream_in_48_V_data_V",
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(WRAPC_STREAM_SIZE_IN_stream_in_48_V_data_V),
@@ -1091,7 +1091,7 @@ void apatb_color_convert_2_hw(void* __xlx_apatb_param_stream_in_48_V_data_V, voi
   port0.hasWrite = false;
 
   static hls::sim::Stream<hls::sim::Byte<1>> port1 {
-    .width = 6,
+    .width = 8,
     .name = "stream_in_48_V_keep_V",
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(WRAPC_STREAM_SIZE_IN_stream_in_48_V_keep_V),
@@ -1105,7 +1105,7 @@ void apatb_color_convert_2_hw(void* __xlx_apatb_param_stream_in_48_V_data_V, voi
   port1.hasWrite = false;
 
   static hls::sim::Stream<hls::sim::Byte<1>> port2 {
-    .width = 6,
+    .width = 8,
     .name = "stream_in_48_V_strb_V",
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(WRAPC_STREAM_SIZE_IN_stream_in_48_V_strb_V),
@@ -1147,7 +1147,7 @@ void apatb_color_convert_2_hw(void* __xlx_apatb_param_stream_in_48_V_data_V, voi
   port4.hasWrite = false;
 
   static hls::sim::Stream<hls::sim::Byte<8>> port5 {
-    .width = 48,
+    .width = 64,
     .name = "stream_out_48_V_data_V",
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_stream_out_48_V_data_V),
@@ -1161,7 +1161,7 @@ void apatb_color_convert_2_hw(void* __xlx_apatb_param_stream_in_48_V_data_V, voi
   port5.hasWrite = true;
 
   static hls::sim::Stream<hls::sim::Byte<1>> port6 {
-    .width = 6,
+    .width = 8,
     .name = "stream_out_48_V_keep_V",
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_stream_out_48_V_keep_V),
@@ -1175,7 +1175,7 @@ void apatb_color_convert_2_hw(void* __xlx_apatb_param_stream_in_48_V_data_V, voi
   port6.hasWrite = true;
 
   static hls::sim::Stream<hls::sim::Byte<1>> port7 {
-    .width = 6,
+    .width = 8,
     .name = "stream_out_48_V_strb_V",
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_stream_out_48_V_strb_V),

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'color_convert_2'" level="0">
-<item name = "Date">Sat Feb 10 02:09:30 2024
+<item name = "Date">Sun Feb 11 00:24:04 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">colorspace</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 2.000 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 5.580 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1, 1, 10.000 ns, 10.000 ns, 1, 1, yes</column>
+<column name="">5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Detail">
@@ -46,25 +46,32 @@
 <section name = "Utilization Estimates" level="0">
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 10, -</column>
+<column name="DSP">-, 5, -, -, -</column>
+<column name="Expression">-, -, 0, 62, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, -, -, -, -</column>
+<column name="Instance">-, 2, 0, 12, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 18, -</column>
-<column name="Register">-, -, 2, -, -</column>
+<column name="Register">-, -, 615, 192, -</column>
 <specialColumn name="Available">120, 80, 35200, 17600, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 8, 1, 1, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="mul_16ns_7s_23_1_1_U2">mul_16ns_7s_23_1_1, 0, 1, 0, 6, 0</column>
+<column name="mul_16ns_9ns_24_1_1_U1">mul_16ns_9ns_24_1_1, 0, 1, 0, 6, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
 <keys size="3">Instance, Module, Expression</keys>
+<column name="mac_muladd_16ns_5ns_24ns_24_4_1_U6">mac_muladd_16ns_5ns_24ns_24_4_1, i0 + i1 * i2</column>
+<column name="mac_muladd_16ns_7ns_24ns_24_4_1_U3">mac_muladd_16ns_7ns_24ns_24_4_1, i0 * i1 + i2</column>
+<column name="mac_mulsub_16ns_5ns_24ns_24_4_1_U7">mac_mulsub_16ns_5ns_24ns_24_4_1, i0 - i1 * i2</column>
+<column name="mac_mulsub_16ns_7ns_23ns_24_4_1_U5">mac_mulsub_16ns_7ns_23ns_24_4_1, i0 - i1 * i2</column>
+<column name="mac_mulsub_16ns_7ns_23s_24_4_1_U4">mac_mulsub_16ns_7ns_23s_24_4_1, i0 - i1 * i2</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
@@ -77,10 +84,11 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln124_fu_223_p2">+, 0, 0, 31, 24, 24</column>
+<column name="add_ln126_fu_256_p2">+, 0, 0, 23, 16, 9</column>
 <column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
-<column name="ap_block_state1_pp0_stage0_iter0">or, 0, 0, 2, 1, 1</column>
-<column name="ap_block_state2_pp0_stage0_iter1">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state6_pp0_stage0_iter5">or, 0, 0, 2, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -92,8 +100,31 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="Cb_reg_409">16, 0, 16, 0</column>
 <column name="ap_CS_fsm">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter5">1, 0, 1, 0</column>
+<column name="b_reg_350">16, 0, 16, 0</column>
+<column name="curr_pixel_data_reg_325">64, 0, 64, 0</column>
+<column name="curr_pixel_keep_reg_330">8, 0, 8, 0</column>
+<column name="curr_pixel_last_reg_345">1, 0, 1, 0</column>
+<column name="curr_pixel_strb_reg_335">8, 0, 8, 0</column>
+<column name="curr_pixel_user_reg_340">1, 0, 1, 0</column>
+<column name="g_reg_356">16, 0, 16, 0</column>
+<column name="mul_ln123_1_reg_378">24, 0, 24, 0</column>
+<column name="mul_ln124_reg_389">23, 0, 23, 0</column>
+<column name="r_reg_361">16, 0, 16, 0</column>
+<column name="r_reg_361_pp0_iter1_reg">16, 0, 16, 0</column>
+<column name="zext_ln123_reg_366">16, 0, 23, 7</column>
+<column name="b_reg_350">64, 32, 16, 0</column>
+<column name="curr_pixel_data_reg_325">64, 32, 64, 0</column>
+<column name="curr_pixel_keep_reg_330">64, 32, 8, 0</column>
+<column name="curr_pixel_last_reg_345">64, 32, 1, 0</column>
+<column name="curr_pixel_strb_reg_335">64, 32, 8, 0</column>
+<column name="curr_pixel_user_reg_340">64, 32, 1, 0</column>
 </table>
 </item>
 </section>
@@ -105,19 +136,19 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="ap_clk">in, 1, ap_ctrl_none, color_convert_2, return value</column>
 <column name="ap_rst_n">in, 1, ap_ctrl_none, color_convert_2, return value</column>
-<column name="stream_in_48_TDATA">in, 48, axis, stream_in_48_V_data_V, pointer</column>
+<column name="stream_in_48_TDATA">in, 64, axis, stream_in_48_V_data_V, pointer</column>
 <column name="stream_in_48_TVALID">in, 1, axis, stream_in_48_V_last_V, pointer</column>
 <column name="stream_in_48_TREADY">out, 1, axis, stream_in_48_V_last_V, pointer</column>
 <column name="stream_in_48_TLAST">in, 1, axis, stream_in_48_V_last_V, pointer</column>
-<column name="stream_in_48_TKEEP">in, 6, axis, stream_in_48_V_keep_V, pointer</column>
-<column name="stream_in_48_TSTRB">in, 6, axis, stream_in_48_V_strb_V, pointer</column>
+<column name="stream_in_48_TKEEP">in, 8, axis, stream_in_48_V_keep_V, pointer</column>
+<column name="stream_in_48_TSTRB">in, 8, axis, stream_in_48_V_strb_V, pointer</column>
 <column name="stream_in_48_TUSER">in, 1, axis, stream_in_48_V_user_V, pointer</column>
-<column name="stream_out_48_TDATA">out, 48, axis, stream_out_48_V_data_V, pointer</column>
+<column name="stream_out_48_TDATA">out, 64, axis, stream_out_48_V_data_V, pointer</column>
 <column name="stream_out_48_TVALID">out, 1, axis, stream_out_48_V_last_V, pointer</column>
 <column name="stream_out_48_TREADY">in, 1, axis, stream_out_48_V_last_V, pointer</column>
 <column name="stream_out_48_TLAST">out, 1, axis, stream_out_48_V_last_V, pointer</column>
-<column name="stream_out_48_TKEEP">out, 6, axis, stream_out_48_V_keep_V, pointer</column>
-<column name="stream_out_48_TSTRB">out, 6, axis, stream_out_48_V_strb_V, pointer</column>
+<column name="stream_out_48_TKEEP">out, 8, axis, stream_out_48_V_keep_V, pointer</column>
+<column name="stream_out_48_TSTRB">out, 8, axis, stream_out_48_V_strb_V, pointer</column>
 <column name="stream_out_48_TUSER">out, 1, axis, stream_out_48_V_user_V, pointer</column>
 </table>
 </item>

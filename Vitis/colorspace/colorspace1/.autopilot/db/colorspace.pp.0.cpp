@@ -9039,7 +9039,7 @@ struct coeffs {
  coeff_type c3;
 };
 
-typedef ap_axiu<48,1,0,0> pixel;
+typedef ap_axiu<64,1,0,0> pixel;
 typedef hls::stream<pixel> video_stream;
 
 void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48,
@@ -9048,6 +9048,10 @@ void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48,
 
 __attribute__((sdx_kernel("color_convert_2", 0))) void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48) {
 #line 17 "/home/mac/FPGA/VitisProjects/colorspace/colorspace1/csynth.tcl"
+#pragma HLSDIRECTIVE TOP name=color_convert_2
+# 73 "colorspace/source/colorspace.cpp"
+
+#line 7 "/home/mac/FPGA/VitisProjects/colorspace/colorspace1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=color_convert_2
 # 73 "colorspace/source/colorspace.cpp"
 
@@ -9066,27 +9070,27 @@ __attribute__((sdx_kernel("color_convert_2", 0))) void color_convert_2(video_str
 #pragma HLS pipeline II=1
 
  pixel curr_pixel;
- stream_in_48.read(curr_pixel);
- auto v = channels(curr_pixel.data);
+ curr_pixel = stream_in_48.read();
+# 111 "colorspace/source/colorspace.cpp"
+ int c1 = 77;
+ int c2 = 150;
+ int c3 = 29;
+ int c4 = 43;
+ int c5 = 85;
+ int c6 = 128;
+ int c7 = 107;
+ int c8 = 21;
 
- comp_type in1, in2, in3, out1, out2, out3;
- comp_type in4, in5, in6, out4, out5, out6;
- in1.range() = v.p1;
- in2.range() = v.p2;
- in3.range() = v.p3;
- in4.range() = v.p4;
- in5.range() = v.p5;
- in6.range() = v.p6;
+ ap_uint<16> b = curr_pixel.data.range(15,0);
+ ap_uint<16> g = curr_pixel.data.range(31,16);
+ ap_uint<16> r = curr_pixel.data.range(47,32);
+ ap_int<16> Y = (+c1 * r + c2 * g + c3 * b) >> 8;
+ ap_int<16> Cb = (-c4 * r - c5 * g + c6 * b) >> 8;
+ ap_int<16> Cr = (+c6 * r - c7 * g - c8 * b) >> 8;
+ curr_pixel.data.range(15,0) = Y - 128;
+ curr_pixel.data.range(31,16) = Cb;
+ curr_pixel.data.range(47,32) = Cr;
 
- out1 = in1;
- out2 = in2;
- out3 = in3;
- out4 = in4;
- out5 = in5;
- out6 = in6;
-
- curr_pixel.data = (out6.range(), out5.range(), out4.range(),
-  out3.range(), out2.range(), out1.range());
 
  stream_out_48.write(curr_pixel);
 }

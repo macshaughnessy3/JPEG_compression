@@ -86,8 +86,8 @@ void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48) {
 #pragma HLS pipeline II=1
 
 	pixel curr_pixel;
-	stream_in_48.read(curr_pixel);
-//	auto v = urr_pixel.data);
+	curr_pixel = stream_in_48.read();
+//	auto v = curr_pixel.data;
 //
 //	comp_type in1, in2, in3, out1, out2, out3;
 //	comp_type in4, in5, in6, out4, out5, out6;
@@ -107,6 +107,26 @@ void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48) {
 //
 //	curr_pixel.data = (out6.range(), out5.range(), out4.range(),
 //		out3.range(), out2.range(), out1.range());
+
+	int c1 = 77;//0.299
+	int c2 = 150;//0.587
+	int c3 = 29;//0.114
+	int c4 = 43;//0.16874
+	int c5 = 85;
+	int c6 = 128;
+	int c7 = 107;
+	int c8 = 21;
+
+	ap_uint<16> b = curr_pixel.data.range(15,0);
+	ap_uint<16> g = curr_pixel.data.range(31,16);
+	ap_uint<16> r = curr_pixel.data.range(47,32);
+	ap_int<16> Y  = (+c1 * r + c2 * g + c3 * b) >> 8;
+	ap_int<16> Cb = (-c4 * r - c5 * g + c6 * b) >> 8;
+	ap_int<16> Cr = (+c6 * r - c7 * g - c8 * b) >> 8;
+	curr_pixel.data.range(15,0) = Y - 128;
+	curr_pixel.data.range(31,16) = Cb;
+	curr_pixel.data.range(47,32) = Cr;
+
 
 	stream_out_48.write(curr_pixel);
 }

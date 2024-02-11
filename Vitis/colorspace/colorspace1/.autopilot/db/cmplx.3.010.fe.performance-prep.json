@@ -4,7 +4,7 @@
     "calls": "",
     "file": "colorspace.cpp",
     "fileloc": 73,
-    "instructions": 138,
+    "instructions": 150,
     "loads": {
       "L": 15
     },
@@ -12,6 +12,6 @@
     "stores": {
       "L": 15
     },
-    "total_instructions": 183
+    "total_instructions": 195
   }
 }

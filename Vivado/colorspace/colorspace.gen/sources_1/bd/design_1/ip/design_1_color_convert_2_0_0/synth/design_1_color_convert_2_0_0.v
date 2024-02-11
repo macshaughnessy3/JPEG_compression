@@ -48,7 +48,7 @@
 
 
 // IP VLNV: mac:jpeg:color_convert_2:0.0
-// IP Revision: 3
+// IP Revision: 6
 
 (* X_CORE_INFO = "color_convert_2,Vivado 2023.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_color_convert_2_0_0,color_convert_2,{}" *)
@@ -84,14 +84,14 @@ input wire stream_in_48_TVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_in_48 TREADY" *)
 output wire stream_in_48_TREADY;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_in_48 TDATA" *)
-input wire [47 : 0] stream_in_48_TDATA;
+input wire [63 : 0] stream_in_48_TDATA;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_in_48 TLAST" *)
 input wire [0 : 0] stream_in_48_TLAST;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_in_48 TKEEP" *)
-input wire [5 : 0] stream_in_48_TKEEP;
+input wire [7 : 0] stream_in_48_TKEEP;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_in_48 TSTRB" *)
-input wire [5 : 0] stream_in_48_TSTRB;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME stream_in_48, TDATA_NUM_BYTES 6, TUSER_WIDTH 1, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
+input wire [7 : 0] stream_in_48_TSTRB;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME stream_in_48, TDATA_NUM_BYTES 8, TUSER_WIDTH 1, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_in_48 TUSER" *)
 input wire [0 : 0] stream_in_48_TUSER;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_out_48 TVALID" *)
@@ -99,14 +99,14 @@ output wire stream_out_48_TVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_out_48 TREADY" *)
 input wire stream_out_48_TREADY;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_out_48 TDATA" *)
-output wire [47 : 0] stream_out_48_TDATA;
+output wire [63 : 0] stream_out_48_TDATA;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_out_48 TLAST" *)
 output wire [0 : 0] stream_out_48_TLAST;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_out_48 TKEEP" *)
-output wire [5 : 0] stream_out_48_TKEEP;
+output wire [7 : 0] stream_out_48_TKEEP;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_out_48 TSTRB" *)
-output wire [5 : 0] stream_out_48_TSTRB;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME stream_out_48, TDATA_NUM_BYTES 6, TUSER_WIDTH 1, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
+output wire [7 : 0] stream_out_48_TSTRB;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME stream_out_48, TDATA_NUM_BYTES 8, TUSER_WIDTH 1, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 stream_out_48 TUSER" *)
 output wire [0 : 0] stream_out_48_TUSER;
 

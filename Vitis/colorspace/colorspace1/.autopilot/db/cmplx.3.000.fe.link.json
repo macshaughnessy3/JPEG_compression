@@ -1,26 +1,17 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "1",
+    "calls": "",
     "file": "colorspace.cpp",
     "fileloc": 73,
-    "instructions": 192,
+    "instructions": 238,
     "loads": {
-      "L": 8
+      "L": 1
     },
     "name": "color_convert_2",
     "stores": {
-      "L": 8
+      "L": 1
     },
-    "total_instructions": 1943
-  },
-  "1": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "color_convert.hpp",
-    "fileloc": 23,
-    "instructions": 55,
-    "name": "channels",
-    "total_instructions": 313
+    "total_instructions": 2292
   }
 }

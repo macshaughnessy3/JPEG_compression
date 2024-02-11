@@ -37,7 +37,7 @@
         }
       },
       "color_convert_2_0": "",
-      "axi_vdma_0": ""
+      "axi_dma_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1828,20 +1828,32 @@
       },
       "color_convert_2_0": {
         "vlnv": "mac:jpeg:color_convert_2:0.0",
-        "ip_revision": "3",
+        "ip_revision": "6",
         "xci_name": "design_1_color_convert_2_0_0",
         "xci_path": "ip/design_1_color_convert_2_0_0/design_1_color_convert_2_0_0.xci",
         "inst_hier_path": "color_convert_2_0"
       },
-      "axi_vdma_0": {
-        "vlnv": "xilinx.com:ip:axi_vdma:6.3",
-        "ip_revision": "17",
-        "xci_name": "design_1_axi_vdma_0_0",
-        "xci_path": "ip/design_1_axi_vdma_0_0/design_1_axi_vdma_0_0.xci",
-        "inst_hier_path": "axi_vdma_0",
+      "axi_dma_0": {
+        "vlnv": "xilinx.com:ip:axi_dma:7.1",
+        "ip_revision": "30",
+        "xci_name": "design_1_axi_dma_0_0",
+        "xci_path": "ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci",
+        "inst_hier_path": "axi_dma_0",
         "parameters": {
+          "c_addr_width": {
+            "value": "32"
+          },
+          "c_include_sg": {
+            "value": "0"
+          },
+          "c_m_axi_mm2s_data_width": {
+            "value": "64"
+          },
           "c_m_axis_mm2s_tdata_width": {
-            "value": "48"
+            "value": "64"
+          },
+          "c_sg_length_width": {
+            "value": "26"
           }
         },
         "interface_ports": {
@@ -1868,6 +1880,10 @@
         },
         "addressing": {
           "address_spaces": {
+            "Data_SG": {
+              "range": "4G",
+              "width": "32"
+            },
             "Data_MM2S": {
               "range": "4G",
               "width": "32"
@@ -1881,6 +1897,24 @@
       }
     },
     "interface_nets": {
+      "axi_dma_0_M_AXIS_MM2S": {
+        "interface_ports": [
+          "color_convert_2_0/stream_in_48",
+          "axi_dma_0/M_AXIS_MM2S"
+        ]
+      },
+      "axi_dma_0_M_AXI_MM2S": {
+        "interface_ports": [
+          "axi_dma_0/M_AXI_MM2S",
+          "axi_mem_intercon/S00_AXI"
+        ]
+      },
+      "axi_dma_0_M_AXI_S2MM": {
+        "interface_ports": [
+          "axi_dma_0/M_AXI_S2MM",
+          "axi_mem_intercon/S01_AXI"
+        ]
+      },
       "axi_mem_intercon_M00_AXI": {
         "interface_ports": [
           "axi_mem_intercon/M00_AXI",
@@ -1893,28 +1927,10 @@
           "processing_system7_0/S_AXI_HP1"
         ]
       },
-      "axi_vdma_0_M_AXIS_MM2S": {
-        "interface_ports": [
-          "axi_vdma_0/M_AXIS_MM2S",
-          "color_convert_2_0/stream_in_48"
-        ]
-      },
-      "axi_vdma_0_M_AXI_MM2S": {
-        "interface_ports": [
-          "axi_vdma_0/M_AXI_MM2S",
-          "axi_mem_intercon/S00_AXI"
-        ]
-      },
-      "axi_vdma_0_M_AXI_S2MM": {
-        "interface_ports": [
-          "axi_vdma_0/M_AXI_S2MM",
-          "axi_mem_intercon/S01_AXI"
-        ]
-      },
       "color_convert_2_0_stream_out_48": {
         "interface_ports": [
           "color_convert_2_0/stream_out_48",
-          "axi_vdma_0/S_AXIS_S2MM"
+          "axi_dma_0/S_AXIS_S2MM"
         ]
       },
       "processing_system7_0_DDR": {
@@ -1938,7 +1954,7 @@
       "ps7_0_axi_periph_M00_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M00_AXI",
-          "axi_vdma_0/S_AXI_LITE"
+          "axi_dma_0/S_AXI_LITE"
         ]
       }
     },
@@ -1958,17 +1974,15 @@
           "axi_mem_intercon/S01_ACLK",
           "axi_mem_intercon/S02_ACLK",
           "ps7_0_axi_periph/M01_ACLK",
-          "color_convert_2_0/ap_clk",
           "axi_mem_intercon/S03_ACLK",
           "processing_system7_0/S_AXI_HP1_ACLK",
           "axi_mem_intercon/M01_ACLK",
           "axi_mem_intercon/S04_ACLK",
           "axi_mem_intercon/S05_ACLK",
-          "axi_vdma_0/m_axi_mm2s_aclk",
-          "axi_vdma_0/m_axi_s2mm_aclk",
-          "axi_vdma_0/s_axi_lite_aclk",
-          "axi_vdma_0/m_axis_mm2s_aclk",
-          "axi_vdma_0/s_axis_s2mm_aclk"
+          "axi_dma_0/m_axi_mm2s_aclk",
+          "axi_dma_0/m_axi_s2mm_aclk",
+          "axi_dma_0/s_axi_lite_aclk",
+          "color_convert_2_0/ap_clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1989,12 +2003,12 @@
           "axi_mem_intercon/S01_ARESETN",
           "axi_mem_intercon/S02_ARESETN",
           "ps7_0_axi_periph/M01_ARESETN",
-          "color_convert_2_0/ap_rst_n",
           "axi_mem_intercon/S03_ARESETN",
           "axi_mem_intercon/M01_ARESETN",
           "axi_mem_intercon/S04_ARESETN",
           "axi_mem_intercon/S05_ARESETN",
-          "axi_vdma_0/axi_resetn"
+          "axi_dma_0/axi_resetn",
+          "color_convert_2_0/ap_rst_n"
         ]
       }
     },
@@ -2003,17 +2017,31 @@
         "address_spaces": {
           "Data": {
             "segments": {
-              "SEG_axi_vdma_0_Reg": {
-                "address_block": "/axi_vdma_0/S_AXI_LITE/Reg",
-                "offset": "0x44A00000",
+              "SEG_axi_dma_0_Reg": {
+                "address_block": "/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x41E00000",
                 "range": "64K"
               }
             }
           }
         }
       },
-      "/axi_vdma_0": {
+      "/axi_dma_0": {
         "address_spaces": {
+          "Data_SG": {
+            "segments": {
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "512M"
+              },
+              "SEG_processing_system7_0_HP1_DDR_LOWOCM": {
+                "address_block": "/processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM",
+                "offset": "0x20000000",
+                "range": "512M"
+              }
+            }
+          },
           "Data_MM2S": {
             "segments": {
               "SEG_processing_system7_0_HP0_DDR_LOWOCM": {

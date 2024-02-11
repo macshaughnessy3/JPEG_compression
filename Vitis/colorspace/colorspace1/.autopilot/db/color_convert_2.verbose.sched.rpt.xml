@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'color_convert_2'" level="0">
-<item name = "Date">Sat Feb 10 02:09:30 2024
+<item name = "Date">Sun Feb 11 00:24:04 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">colorspace</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 2.000 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 5.580 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1, 1, 10.000 ns, 10.000 ns, 1, 1, yes</column>
+<column name="">5, 5, 50.000 ns, 50.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Detail">

@@ -16,18 +16,18 @@
         <PipelineType>yes</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>2.000</EstimatedClockPeriod>
+            <EstimatedClockPeriod>5.580</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>1</Best-caseLatency>
-            <Average-caseLatency>1</Average-caseLatency>
-            <Worst-caseLatency>1</Worst-caseLatency>
-            <Best-caseRealTimeLatency>10.000 ns</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>10.000 ns</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>10.000 ns</Worst-caseRealTimeLatency>
+            <Best-caseLatency>5</Best-caseLatency>
+            <Average-caseLatency>5</Average-caseLatency>
+            <Worst-caseLatency>5</Worst-caseLatency>
+            <Best-caseRealTimeLatency>50.000 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>50.000 ns</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>50.000 ns</Worst-caseRealTimeLatency>
             <PipelineInitiationInterval>1</PipelineInitiationInterval>
-            <PipelineDepth>2</PipelineDepth>
+            <PipelineDepth>6</PipelineDepth>
             <Interval-min>1</Interval-min>
             <Interval-max>1</Interval-max>
         </SummaryOfOverallLatency>
@@ -39,10 +39,10 @@
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <FF>2</FF>
-            <LUT>28</LUT>
+            <DSP>7</DSP>
+            <FF>615</FF>
+            <LUT>284</LUT>
             <BRAM_18K>0</BRAM_18K>
-            <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -84,7 +84,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>in</Dir>
-            <Bits>48</Bits>
+            <Bits>64</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -132,7 +132,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>in</Dir>
-            <Bits>6</Bits>
+            <Bits>8</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -144,7 +144,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>in</Dir>
-            <Bits>6</Bits>
+            <Bits>8</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -168,7 +168,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>out</Dir>
-            <Bits>48</Bits>
+            <Bits>64</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -216,7 +216,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>out</Dir>
-            <Bits>6</Bits>
+            <Bits>8</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -228,7 +228,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>out</Dir>
-            <Bits>6</Bits>
+            <Bits>8</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -246,8 +246,9 @@
         </RtlPorts>
     </InterfaceSummary>
     <RTLDesignHierarchy>
-        <TopModule MAX_DEPTH="1">
+        <TopModule MAX_DEPTH="2">
             <ModuleName>color_convert_2</ModuleName>
+            <BindInstances>mac_muladd_16ns_7ns_24ns_24_4_1_U3 mul_16ns_9ns_24_1_1_U1 mac_muladd_16ns_7ns_24ns_24_4_1_U3 mac_muladd_16ns_5ns_24ns_24_4_1_U6 mac_muladd_16ns_5ns_24ns_24_4_1_U6 mul_16ns_7s_23_1_1_U2 mac_mulsub_16ns_7ns_23s_24_4_1_U4 mac_mulsub_16ns_7ns_23s_24_4_1_U4 add_ln124_fu_223_p2 mac_mulsub_16ns_7ns_23ns_24_4_1_U5 mac_mulsub_16ns_7ns_23ns_24_4_1_U5 mac_mulsub_16ns_5ns_24ns_24_4_1_U7 mac_mulsub_16ns_5ns_24ns_24_4_1_U7 add_ln126_fu_256_p2</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -258,17 +259,17 @@
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
                     <TargetInitiationInterval>1</TargetInitiationInterval>
-                    <EstimatedClockPeriod>2.000</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>5.580</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>1</Best-caseLatency>
-                    <Average-caseLatency>1</Average-caseLatency>
-                    <Worst-caseLatency>1</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>10.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>10.000 ns</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>10.000 ns</Worst-caseRealTimeLatency>
+                    <Best-caseLatency>5</Best-caseLatency>
+                    <Average-caseLatency>5</Average-caseLatency>
+                    <Worst-caseLatency>5</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>50.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>50.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>50.000 ns</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>1</PipelineInitiationInterval>
-                    <PipelineDepth>2</PipelineDepth>
+                    <PipelineDepth>6</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfViolations>
@@ -279,36 +280,52 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>2</FF>
+                    <DSP>7</DSP>
+                    <AVAIL_DSP>80</AVAIL_DSP>
+                    <UTIL_DSP>8</UTIL_DSP>
+                    <FF>615</FF>
                     <AVAIL_FF>35200</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>28</LUT>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>284</LUT>
                     <AVAIL_LUT>17600</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>120</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <DSP>0</DSP>
-                    <AVAIL_DSP>80</AVAIL_DSP>
-                    <UTIL_DSP>0</UTIL_DSP>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
                 </Resources>
             </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16ns_7ns_24ns_24_4_1_U3" SOURCE="colorspace/source/colorspace.cpp:123" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln123"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_16ns_9ns_24_1_1_U1" SOURCE="colorspace/source/colorspace.cpp:123" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln123_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16ns_7ns_24ns_24_4_1_U3" SOURCE="colorspace/source/colorspace.cpp:123" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln123"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16ns_5ns_24ns_24_4_1_U6" SOURCE="colorspace/source/colorspace.cpp:123" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln123_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16ns_5ns_24ns_24_4_1_U6" SOURCE="colorspace/source/colorspace.cpp:123" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln123_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_16ns_7s_23_1_1_U2" SOURCE="colorspace/source/colorspace.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln124"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16ns_7ns_23s_24_4_1_U4" SOURCE="colorspace/source/colorspace.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln124_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16ns_7ns_23s_24_4_1_U4" SOURCE="colorspace/source/colorspace.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln124"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln124_fu_223_p2" SOURCE="colorspace/source/colorspace.cpp:124" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln124"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16ns_7ns_23ns_24_4_1_U5" SOURCE="colorspace/source/colorspace.cpp:125" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln125"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16ns_7ns_23ns_24_4_1_U5" SOURCE="colorspace/source/colorspace.cpp:125" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln125"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16ns_5ns_24ns_24_4_1_U7" SOURCE="colorspace/source/colorspace.cpp:125" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln125_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16ns_5ns_24ns_24_4_1_U7" SOURCE="colorspace/source/colorspace.cpp:125" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln125_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln126_fu_256_p2" SOURCE="colorspace/source/colorspace.cpp:126" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln126"/>
+            </BindNodes>
         </Module>
     </ModuleInformation>
     <FIFOInformation/>
     <UserConfigCommands>
-        <config_export flow="syn" library="jpeg" vendor="mac" version="0.0.2" vivado_clock="10"/>
+        <config_export flow="syn" library="jpeg" vendor="mac" version="0.0.6" vivado_clock="10"/>
     </UserConfigCommands>
     <Args>
-        <Arg ArgName="stream_in_48" index="0" direction="in" srcType="stream&lt;hls::axis&lt;ap_uint&lt;48&gt;, 1, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="128">
+        <Arg ArgName="stream_in_48" index="0" direction="in" srcType="stream&lt;hls::axis&lt;ap_uint&lt;64&gt;, 1, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="128">
             <hwRefs>
                 <hwRef type="interface" interface="stream_in_48" name="" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="stream_out_48" index="1" direction="out" srcType="stream&lt;hls::axis&lt;ap_uint&lt;48&gt;, 1, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="128">
+        <Arg ArgName="stream_out_48" index="1" direction="out" srcType="stream&lt;hls::axis&lt;ap_uint&lt;64&gt;, 1, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="128">
             <hwRefs>
                 <hwRef type="interface" interface="stream_out_48" name="" usage="data" direction="out"/>
             </hwRefs>
@@ -338,7 +355,7 @@
                 <port>ap_rst_n</port>
             </ports>
         </Interface>
-        <Interface InterfaceName="stream_in_48" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="48" portPrefix="stream_in_48_">
+        <Interface InterfaceName="stream_in_48" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="64" portPrefix="stream_in_48_">
             <ports>
                 <port>stream_in_48_TDATA</port>
                 <port>stream_in_48_TKEEP</port>
@@ -352,7 +369,7 @@
                 <constraint constraint_type="pragma interface" mode="axis" register_option="1" register_mode="both" argName="stream_in_48"/>
             </constraints>
         </Interface>
-        <Interface InterfaceName="stream_out_48" type="axi4stream" busTypeName="axis" mode="master" dataWidth="48" portPrefix="stream_out_48_">
+        <Interface InterfaceName="stream_out_48" type="axi4stream" busTypeName="axis" mode="master" dataWidth="64" portPrefix="stream_out_48_">
             <ports>
                 <port>stream_out_48_TDATA</port>
                 <port>stream_out_48_TKEEP</port>
@@ -372,8 +389,8 @@
             <item name="AXIS">
                 <table>
                     <keys size="10">Interface, Direction, Register Mode, TDATA, TKEEP, TLAST, TREADY, TSTRB, TUSER, TVALID</keys>
-                    <column name="stream_in_48">in, both, 48, 6, 1, 1, 6, 1, 1</column>
-                    <column name="stream_out_48">out, both, 48, 6, 1, 1, 6, 1, 1</column>
+                    <column name="stream_in_48">in, both, 64, 8, 1, 1, 8, 1, 1</column>
+                    <column name="stream_out_48">out, both, 64, 8, 1, 1, 8, 1, 1</column>
                 </table>
             </item>
             <item name="TOP LEVEL CONTROL">
@@ -391,8 +408,8 @@
             <item name="Top Function Arguments">
                 <table>
                     <keys size="3">Argument, Direction, Datatype</keys>
-                    <column name="stream_in_48">in, stream&lt;hls::axis&lt;ap_uint&lt;48&gt; 1 0 0 '8' false&gt; 0&gt;&amp;</column>
-                    <column name="stream_out_48">out, stream&lt;hls::axis&lt;ap_uint&lt;48&gt; 1 0 0 '8' false&gt; 0&gt;&amp;</column>
+                    <column name="stream_in_48">in, stream&lt;hls::axis&lt;ap_uint&lt;64&gt; 1 0 0 '8' false&gt; 0&gt;&amp;</column>
+                    <column name="stream_out_48">out, stream&lt;hls::axis&lt;ap_uint&lt;64&gt; 1 0 0 '8' false&gt; 0&gt;&amp;</column>
                 </table>
             </item>
             <item name="SW-to-HW Mapping">

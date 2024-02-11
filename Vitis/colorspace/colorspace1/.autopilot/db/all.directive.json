@@ -16,6 +16,27 @@
       ]
     },
     "slx": false,
+    "sourceFile": "/home/mac/FPGA/VitisProjects/colorspace/colorspace1/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "color_convert_2",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "color_convert_2"
+        }
+      ]
+    },
+    "slx": false,
     "sourceFile": "/home/mac/FPGA/VitisProjects/colorspace/colorspace1/csynth.tcl",
     "sourceLine": 17,
     "success": true
