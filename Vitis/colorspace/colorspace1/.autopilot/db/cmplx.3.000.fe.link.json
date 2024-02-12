@@ -3,8 +3,8 @@
     "basicblocks": 1,
     "calls": "",
     "file": "colorspace.cpp",
-    "fileloc": 73,
-    "instructions": 238,
+    "fileloc": 84,
+    "instructions": 435,
     "loads": {
       "L": 1
     },
@@ -12,6 +12,6 @@
     "stores": {
       "L": 1
     },
-    "total_instructions": 2292
+    "total_instructions": 3861
   }
 }

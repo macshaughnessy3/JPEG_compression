@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 6
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -97,11 +98,17 @@ set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoP
 set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_color_convert_2_0_0/constraints/color_convert_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_2/design_1_axi_dma_0_2.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_2/design_1_axi_dma_0_2_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_2/design_1_axi_dma_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_color_convert_2_0_5/constraints/color_convert_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/mac/FPGA/VivadoProjects/colorspace/colorspace.gen/sources_1/bd/design_1/design_1_ooc.xdc]

@@ -1,5 +1,4 @@
-//#include "colorspace.h"
-//
+
 //void image_filter(AXISTREAM &stream_in, AXISTREAM &stream_out){
 //	#pragma HLS INTERFACE ap_ctrl_none port=return
 //	#pragma HLS INTERFACE mode=AXIS port=stream_in register_mode=off
@@ -33,100 +32,85 @@
 //					}
 //				}
 //}
-//
-////void cvtRGB2YC(IMAGE3 &in, IMAGE3s &out){
-////	int c1 = 77;//0.299
-////	int c2 = 150;//0.587
-////	int c3 = 29;//0.114
-////	int c4 = 43;//0.16874
-////	int c5 = 85;
-////	int c6 = 128;
-////	int c7 = 107;
-////	int c8 = 21;
-////
-////	for (int y = 0; y < MAX_HEIGHT; y++) {
-////		for (int x = 0; x < MAX_WIDTH; x++) {
-////			#pragma HLS pipeline II=2
-////			ap_uint<8> pixel[3];
-////			ap_int<16>  pixelOut[3];
-////			in >> pixel;
-////			ap_uint<8> b = pixel[0];
-////			ap_uint<8> g = pixel[1];
-////			ap_uint<8> r = pixel[2];
-////			ap_int<16> Y  = (+c1 * r + c2 * g + c3 * b) >> 8;
-////			ap_int<16> Cb = (-c4 * r - c5 * g + c6 * b) >> 8;
-////			ap_int<16> Cr = (+c6 * r - c7 * g - c8 * b) >> 8;
-////			pixelOut[0] = Y - 128;
-////			pixelOut[1] = Cb;
-////			pixelOut[2] = Cr;
-////			out << pixelOut;
-////		}
-////	}
-////}
-
-// Copyright (C) 2021-2022 Xilinx, Inc
-//
-// SPDX-License-Identifier: BSD-3-Clause
 
 #include "color_convert.hpp"
+////#define N 500;
+//
+//void downsample(video_stream& stream_in_48, video_stream& stream_out_48) {
+//	#pragma HLS INTERFACE ap_ctrl_none port=return
+//	#pragma HLS INTERFACE axis port=stream_in_48 register
+//	#pragma HLS INTERFACE axis port=stream_out_48 register
+//
+//	auto N=500;
+//	ap_uint<64> image_block[N][N];
+//	ap_uint<64> downsample_block[N/2][N/2];
+////	#pragma HLS ARRAY_PARTITION variable=image_block type=complete dim=0
+////	#pragma HLS ARRAY_PARTITION variable=downsample_block type=complete dim=0
+//
+//	pixel curr_pixel;
+//	pixel curr_pixel_out;
+//	curr_pixel.keep=-1;
+//	curr_pixel_out.keep=-1;
+//	curr_pixel_out.last=0;
+//
+//
+//	read_image:
+//		for(auto i=0; i<N; i++){
+//			for(auto j=0; j<N; j++){
+//				curr_pixel = stream_in_48.read();
+//				image_block[i][j]=curr_pixel.data;
+//			}
+//		}
+//	downsample:
+//		for(auto i=0;i<N/2;i++){
+//			for(auto j=0; j<N/2; j++){
+//				downsample_block[i][j].range(15,0)=(image_block[i*2][j*2].range(15,0)+image_block[i*2+1][j*2+1].range(15,0)+image_block[i*2+1][j*2].range(15,0)+image_block[i*2][j*2+1].range(15,0))/4;
+//				downsample_block[i][j].range(31,16)=(image_block[i*2][j*2].range(31,16)+image_block[i*2+1][j*2+1].range(31,16)+image_block[i*2+1][j*2].range(31,16)+image_block[i*2][j*2+1].range(31,16))/4;
+//				downsample_block[i][j].range(47,32)=(image_block[i*2][j*2].range(47,32)+image_block[i*2+1][j*2+1].range(47,32)+image_block[i*2+1][j*2].range(47,32)+image_block[i*2][j*2+1].range(47,32))/4;
+//			}
+//		}
+//	write_image:
+//		for(auto i=0;i<N/2;i++){
+//			for(auto j=0; j<N/2; j++){
+//				curr_pixel_out.data = downsample_block[i][j];
+//				stream_out_48.write(curr_pixel_out);
+//				if (i==N/2-1 && j>N/2-3){
+//					curr_pixel_out.last=1;
+//				}
+//			}
+//		}
+//}
 
-void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48) {
-#pragma HLS INTERFACE ap_ctrl_none port=return
-//#pragma HLS INTERFACE s_axilite register port=c1
-//#pragma HLS INTERFACE s_axilite register port=c2
-//#pragma HLS INTERFACE s_axilite register port=c3
-//#pragma HLS INTERFACE s_axilite register port=bias
-//#pragma HLS DISAGGREGATE variable=c1
-//#pragma HLS DISAGGREGATE variable=c2
-//#pragma HLS DISAGGREGATE variable=c3
-//#pragma HLS DISAGGREGATE variable=bias
-#pragma HLS INTERFACE axis port=stream_in_48 register
-#pragma HLS INTERFACE axis port=stream_out_48 register
+void color_convert_2(video_stream& stream_in, video_stream& stream_out) {
+	#pragma HLS INTERFACE ap_ctrl_none port=return
+	#pragma HLS INTERFACE axis port=stream_in register
+	#pragma HLS INTERFACE axis port=stream_out register
 
-#pragma HLS pipeline II=1
+	#pragma HLS pipeline II=1
 
 	pixel curr_pixel;
-	curr_pixel = stream_in_48.read();
-//	auto v = curr_pixel.data;
-//
-//	comp_type in1, in2, in3, out1, out2, out3;
-//	comp_type in4, in5, in6, out4, out5, out6;
-//	in1.range() = v.p1;
-//	in2.range() = v.p2;
-//	in3.range() = v.p3;
-//	in4.range() = v.p4;
-//	in5.range() = v.p5;
-//	in6.range() = v.p6;
-//
-//	out1 = in1;
-//	out2 = in2;
-//	out3 = in3;
-//	out4 = in4;
-//	out5 = in5;
-//	out6 = in6;
-//
-//	curr_pixel.data = (out6.range(), out5.range(), out4.range(),
-//		out3.range(), out2.range(), out1.range());
+	curr_pixel = stream_in.read();
 
-	int c1 = 77;//0.299
-	int c2 = 150;//0.587
-	int c3 = 29;//0.114
-	int c4 = 43;//0.16874
-	int c5 = 85;
-	int c6 = 128;
-	int c7 = 107;
-	int c8 = 21;
+	ap_uint<16> r = curr_pixel.data.range(7,0);
+	ap_uint<16> g = curr_pixel.data.range(15,8);
+	ap_uint<16> b = curr_pixel.data.range(31,16);
 
-	ap_uint<16> b = curr_pixel.data.range(15,0);
-	ap_uint<16> g = curr_pixel.data.range(31,16);
-	ap_uint<16> r = curr_pixel.data.range(47,32);
-	ap_int<16> Y  = (+c1 * r + c2 * g + c3 * b) >> 8;
-	ap_int<16> Cb = (-c4 * r - c5 * g + c6 * b) >> 8;
-	ap_int<16> Cr = (+c6 * r - c7 * g - c8 * b) >> 8;
-	curr_pixel.data.range(15,0) = Y - 128;
-	curr_pixel.data.range(31,16) = Cb;
-	curr_pixel.data.range(47,32) = Cr;
+	//	ap_int<16> Y  = 16+((int)(65.738 * r + 129.057 * g + 25.064 * b)>>8);
+	//	ap_int<16> Cb = 128-((int)(37.945 * r + 74.494 * g + 112.439 * b)>>8);
+	//	ap_int<16> Cr = ((int)(112.439 * r + 94.154 * g + 18.285 * b)>>8);
+
+	ap_int<16> Y = 16+(((r<<6)+(r<<1)+(g<<7)+g+(b<<4)+(b<<3)+b)>>8);
+	ap_int<16> Cb = 128+((-((r<<5)+(r<<2)+(r<<1))-((g<<6)+(g<<3)+(g<<1))+((b<<7)-(b<<4)))>>8);
+	ap_int<16> Cr = 128+(((r<<7)-(r<<4)-((g<<6)+(g<<5)-(g<<1))-((b<<4)+(b<<1)))>>8);
+
+//	curr_pixel_out.data.range(7,0) = r;
+//	curr_pixel_out.data.range(15,8) = g;
+//	curr_pixel_out.data.range(31,16) = b;
+
+	curr_pixel.data.range(7,0) = Y;
+	curr_pixel.data.range(15,8) = Cb;
+	curr_pixel.data.range(31,16) = Cr;
 
 
-	stream_out_48.write(curr_pixel);
+	stream_out.write(curr_pixel);
 }

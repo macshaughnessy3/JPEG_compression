@@ -1,0 +1,167 @@
+<profile>
+  <RunData>
+    <RUN_TYPE>synth</RUN_TYPE>
+    <VIVADO_VERSION>v.2023.2</VIVADO_VERSION>
+    <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+  </RunData>
+  <TimingReport>
+    <TargetClockPeriod>10.000</TargetClockPeriod>
+    <AchievedClockPeriod>5.380</AchievedClockPeriod>
+    <CLOCK_NAME>ap_clk</CLOCK_NAME>
+    <CP_FINAL>5.380</CP_FINAL>
+    <CP_ROUTE>NA</CP_ROUTE>
+    <CP_SYNTH>5.380</CP_SYNTH>
+    <CP_TARGET>10.000</CP_TARGET>
+    <SLACK_FINAL>4.620</SLACK_FINAL>
+    <SLACK_ROUTE/>
+    <SLACK_SYNTH>4.620</SLACK_SYNTH>
+    <TIMING_MET>TRUE</TIMING_MET>
+    <TNS_FINAL>0.000</TNS_FINAL>
+    <TNS_ROUTE>NA</TNS_ROUTE>
+    <TNS_SYNTH>0.000</TNS_SYNTH>
+    <WNS_FINAL>4.620</WNS_FINAL>
+    <WNS_ROUTE>NA</WNS_ROUTE>
+    <WNS_SYNTH>4.620</WNS_SYNTH>
+  </TimingReport>
+  <AreaReport>
+    <Resources>
+      <BRAM>0</BRAM>
+      <CLB>0</CLB>
+      <DSP>0</DSP>
+      <FF>341</FF>
+      <LATCH>0</LATCH>
+      <LUT>304</LUT>
+      <SRL>0</SRL>
+      <URAM>0</URAM>
+    </Resources>
+    <AvailableResources>
+      <BRAM>120</BRAM>
+      <CLB>0</CLB>
+      <DSP>80</DSP>
+      <FF>35200</FF>
+      <LUT>17600</LUT>
+      <URAM>0</URAM>
+    </AvailableResources>
+  </AreaReport>
+  <RtlModules>
+    <RtlModule CELL="inst" DEPTH="0" IS_TOP="1" TYPE="function" MODULENAME="color_convert_2" DISPNAME="inst" RTLNAME="color_convert_2">
+      <SubModules count="8">regslice_both_stream_in_V_data_V_U regslice_both_stream_in_V_keep_V_U regslice_both_stream_in_V_last_V_U regslice_both_stream_in_V_strb_V_U regslice_both_stream_out_V_data_V_U regslice_both_stream_out_V_keep_V_U regslice_both_stream_out_V_last_V_U regslice_both_stream_out_V_strb_V_U</SubModules>
+      <Resources FF="341" LUT="304"/>
+      <LocalResources FF="153" LUT="86"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_in_V_data_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_in_V_data_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="68" LUT="129"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_in_V_keep_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_in_V_keep_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="12" LUT="7"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_in_V_last_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_in_V_last_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="6" LUT="6"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_in_V_strb_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_in_V_strb_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="12" LUT="7"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_out_V_data_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_out_V_data_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="60" LUT="47"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_out_V_keep_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_out_V_keep_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="12" LUT="8"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_out_V_last_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_out_V_last_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="6" LUT="6"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_stream_out_V_strb_V_U" BINDMODULE="color_convert_2_regslice_both" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_stream_out_V_strb_V_U" RTLNAME="color_convert_2_regslice_both">
+      <Resources FF="12" LUT="8"/>
+    </RtlModule>
+  </RtlModules>
+  <TimingPaths>
+    <TPATH DATAPATH_DELAY="5.391" DATAPATH_LOGIC_DELAY="2.850" DATAPATH_NET_DELAY="2.541" ENDPOINT_PIN="sub_ln104_2_reg_689_reg[15]/D" LOGIC_LEVELS="7" MAX_FANOUT="10" SLACK="4.620" STARTPOINT_PIN="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[8]/C">
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[8]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="93"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/add_ln103_3_reg_679[1]_i_1" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689[9]_i_15" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="449"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[9]_i_11" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[13]_i_15" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689[13]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="9"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[13]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[16]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="sub_ln104_2_reg_689_reg[15]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="358"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="5.299" DATAPATH_LOGIC_DELAY="2.758" DATAPATH_NET_DELAY="2.541" ENDPOINT_PIN="sub_ln104_2_reg_689_reg[16]/D" LOGIC_LEVELS="7" MAX_FANOUT="10" SLACK="4.712" STARTPOINT_PIN="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[8]/C">
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[8]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="93"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/add_ln103_3_reg_679[1]_i_1" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689[9]_i_15" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="449"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[9]_i_11" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[13]_i_15" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689[13]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="9"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[13]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[16]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="sub_ln104_2_reg_689_reg[16]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="358"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="5.278" DATAPATH_LOGIC_DELAY="2.737" DATAPATH_NET_DELAY="2.541" ENDPOINT_PIN="sub_ln104_2_reg_689_reg[14]/D" LOGIC_LEVELS="7" MAX_FANOUT="10" SLACK="4.733" STARTPOINT_PIN="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[8]/C">
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[8]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="93"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/add_ln103_3_reg_679[1]_i_1" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689[9]_i_15" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="449"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[9]_i_11" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[13]_i_15" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689[13]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="9"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[13]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln104_2_reg_689_reg[16]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="sub_ln104_2_reg_689_reg[14]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="358"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="5.268" DATAPATH_LOGIC_DELAY="2.734" DATAPATH_NET_DELAY="2.534" ENDPOINT_PIN="sub_ln103_reg_674_reg[14]/D" LOGIC_LEVELS="7" MAX_FANOUT="11" SLACK="4.743" STARTPOINT_PIN="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[1]/C">
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="93"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/add_ln102_reg_659[2]_i_1" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674[9]_i_13" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="437"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674_reg[9]_i_6" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674_reg[13]_i_7" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674[13]_i_3" PRIMITIVE_TYPE="LUT.others.LUT1" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674_reg[13]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674_reg[14]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="sub_ln103_reg_674_reg[14]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="357"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="5.142" DATAPATH_LOGIC_DELAY="2.608" DATAPATH_NET_DELAY="2.534" ENDPOINT_PIN="sub_ln103_reg_674_reg[11]/D" LOGIC_LEVELS="6" MAX_FANOUT="11" SLACK="4.869" STARTPOINT_PIN="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[1]/C">
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/B_V_data_1_payload_B_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="93"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/add_ln102_reg_659[2]_i_1" PRIMITIVE_TYPE="LUT.others.LUT3" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674[9]_i_13" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="437"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674_reg[9]_i_6" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674[9]_i_3" PRIMITIVE_TYPE="LUT.others.LUT1" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674_reg[9]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="regslice_both_stream_in_V_data_V_U/sub_ln103_reg_674_reg[13]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="50"/>
+      <CELL NAME="sub_ln103_reg_674_reg[11]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="357"/>
+    </TPATH>
+  </TimingPaths>
+  <VivadoReportFiles>
+    <ReportFile TYPE="design_analysis" PATH="verilog/report/color_convert_2_design_analysis_synth.rpt"/>
+    <ReportFile TYPE="failfast" PATH="verilog/report/color_convert_2_failfast_synth.rpt"/>
+    <ReportFile TYPE="timing" PATH="verilog/report/color_convert_2_timing_synth.rpt"/>
+    <ReportFile TYPE="timing_paths" PATH="verilog/report/color_convert_2_timing_paths_synth.rpt"/>
+    <ReportFile TYPE="utilization" PATH="verilog/report/color_convert_2_utilization_synth.rpt"/>
+    <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/color_convert_2_utilization_hierarchical_synth.rpt"/>
+  </VivadoReportFiles>
+  <GeneralInfo NAME="General Information">
+    <item NAME="Date" VALUE="Mon Feb 12 00:26:29 EST 2024"/>
+    <item NAME="Version" VALUE="2023.2 (Build 4023990 on Oct 11 2023)"/>
+    <item NAME="Project" VALUE="colorspace"/>
+    <item NAME="Solution" VALUE="colorspace1 (Vivado IP Flow Target)"/>
+    <item NAME="Product family" VALUE="zynq"/>
+    <item NAME="Target device" VALUE="xc7z010-clg400-1"/>
+  </GeneralInfo>
+  <RunOptions NAME="Run Constraints &amp; Options">
+    <General NAME="Design Constraints &amp; Options">
+      <item NAME="RTL Synthesis target clock" VALUE="10 ns"/>
+      <item NAME="C-Synthesis target clock" VALUE="10 ns"/>
+      <item NAME="C-Synthesis uncertainty" VALUE="27%"/>
+      <item NAME="config_export -ip_xdc_file" VALUE=""/>
+      <item NAME="config_export -ip_xdc_ooc_file" VALUE=""/>
+    </General>
+    <Syn NAME="RTL Synthesis Options">
+      <item NAME="config_export -vivado_synth_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_synth_design_args" VALUE="-directive sdx_optimization_effort_high"/>
+    </Syn>
+    <Reporting NAME="Reporting Options">
+      <item NAME="config_export -vivado_report_level" VALUE="2"/>
+      <item NAME="config_export -vivado_max_timing_paths" VALUE="10"/>
+    </Reporting>
+  </RunOptions>
+</profile>
+

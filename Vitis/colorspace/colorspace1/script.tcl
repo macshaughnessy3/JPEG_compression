@@ -12,8 +12,8 @@ add_files -tb colorspace/source/color_convert_tb.cpp -cflags "-Wno-unknown-pragm
 open_solution "colorspace1" -flow_target vivado
 set_part {xc7z010-clg400-1}
 create_clock -period 10 -name default
-config_export -flow syn -format ip_catalog -library jpeg -rtl verilog -vendor mac -version 0.0.6 -vivado_clock 10
-source "./colorspace/colorspace1/directives.tcl"
+config_export -flow syn -format ip_catalog -library jpeg -rtl verilog -vendor mac -version 0.5.0 -vivado_clock 10
+#source "./colorspace/colorspace1/directives.tcl"
 csim_design
 csynth_design
 cosim_design

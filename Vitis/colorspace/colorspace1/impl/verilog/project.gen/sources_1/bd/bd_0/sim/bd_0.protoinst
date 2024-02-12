@@ -1,0 +1,35 @@
+{
+	"version": "1.0",
+	"modules": {
+		"bd_0": {
+			"proto_instances": {
+				"/hls_inst/stream_in": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "ap_clk"},
+						"ARESETN": { "actual": "ap_rst_n"},
+						"TDATA": { "actual": "stream_in_TDATA[31:0]"},
+						"TKEEP": { "actual": "stream_in_TKEEP[3:0]"},
+						"TLAST": { "actual": "stream_in_TLAST[0:0]"},
+						"TREADY": { "actual": "stream_in_TREADY"},
+						"TSTRB": { "actual": "stream_in_TSTRB[3:0]"},
+						"TVALID": { "actual": "stream_in_TVALID"}
+					}
+				},
+				"/hls_inst/stream_out": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "ap_clk"},
+						"ARESETN": { "actual": "ap_rst_n"},
+						"TDATA": { "actual": "stream_out_TDATA[31:0]"},
+						"TKEEP": { "actual": "stream_out_TKEEP[3:0]"},
+						"TLAST": { "actual": "stream_out_TLAST[0:0]"},
+						"TREADY": { "actual": "stream_out_TREADY"},
+						"TSTRB": { "actual": "stream_out_TSTRB[3:0]"},
+						"TVALID": { "actual": "stream_out_TVALID"}
+					}
+				}
+			}
+		}
+	}
+}

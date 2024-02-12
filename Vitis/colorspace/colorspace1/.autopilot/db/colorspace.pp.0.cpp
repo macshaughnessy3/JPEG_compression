@@ -156,7 +156,7 @@ extern "C" {
 }
 # 2 "<built-in>" 2
 # 1 "colorspace/source/colorspace.cpp" 2
-# 71 "colorspace/source/colorspace.cpp"
+# 36 "colorspace/source/colorspace.cpp"
 # 1 "colorspace/source/color_convert.hpp" 1
 
 
@@ -9014,83 +9014,46 @@ private:
 }
 # 9 "colorspace/source/color_convert.hpp" 2
 
-
-typedef ap_int<8> pixel_type_s;
-typedef ap_ufixed<8,0, AP_RND, AP_SAT> comp_type;
-typedef ap_fixed<10,2, AP_RND, AP_SAT> coeff_type;
-
-struct channels {
- pixel_type_s p1;
- pixel_type_s p2;
- pixel_type_s p3;
- pixel_type_s p4;
- pixel_type_s p5;
- pixel_type_s p6;
- channels() {}
- channels(ap_uint<48> pixel)
-    : p1(pixel(7,0)), p2(pixel(15,8)), p3(pixel(23,16)),
-     p4(pixel(31,24)), p5(pixel(39,32)), p6(pixel(47,40)) {}
-} ;
-
-
-struct coeffs {
- coeff_type c1;
- coeff_type c2;
- coeff_type c3;
-};
-
-typedef ap_axiu<64,1,0,0> pixel;
+typedef ap_axiu<32,0,0,0> pixel;
 typedef hls::stream<pixel> video_stream;
 
-void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48,
-                   coeffs& c1, coeffs& c2, coeffs& c3, coeffs& bias);
-# 72 "colorspace/source/colorspace.cpp" 2
-
-__attribute__((sdx_kernel("color_convert_2", 0))) void color_convert_2(video_stream& stream_in_48, video_stream& stream_out_48) {
+__attribute__((sdx_kernel("color_convert_2", 0))) void color_convert_2(video_stream& stream_in, video_stream& stream_out);
+# 37 "colorspace/source/colorspace.cpp" 2
+# 84 "colorspace/source/colorspace.cpp"
+__attribute__((sdx_kernel("color_convert_2", 0))) void color_convert_2(video_stream& stream_in, video_stream& stream_out) {
 #line 17 "/home/mac/FPGA/VitisProjects/colorspace/colorspace1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=color_convert_2
-# 73 "colorspace/source/colorspace.cpp"
-
-#line 7 "/home/mac/FPGA/VitisProjects/colorspace/colorspace1/directives.tcl"
-#pragma HLSDIRECTIVE TOP name=color_convert_2
-# 73 "colorspace/source/colorspace.cpp"
+# 84 "colorspace/source/colorspace.cpp"
 
 #pragma HLS INTERFACE ap_ctrl_none port=return
-
-
-
-
-
-
-
-
-#pragma HLS INTERFACE axis port=stream_in_48 register
-#pragma HLS INTERFACE axis port=stream_out_48 register
+#pragma HLS INTERFACE axis port=stream_in register
+#pragma HLS INTERFACE axis port=stream_out register
 
 #pragma HLS pipeline II=1
 
  pixel curr_pixel;
- curr_pixel = stream_in_48.read();
-# 111 "colorspace/source/colorspace.cpp"
- int c1 = 77;
- int c2 = 150;
- int c3 = 29;
- int c4 = 43;
- int c5 = 85;
- int c6 = 128;
- int c7 = 107;
- int c8 = 21;
+ curr_pixel = stream_in.read();
 
- ap_uint<16> b = curr_pixel.data.range(15,0);
- ap_uint<16> g = curr_pixel.data.range(31,16);
- ap_uint<16> r = curr_pixel.data.range(47,32);
- ap_int<16> Y = (+c1 * r + c2 * g + c3 * b) >> 8;
- ap_int<16> Cb = (-c4 * r - c5 * g + c6 * b) >> 8;
- ap_int<16> Cr = (+c6 * r - c7 * g - c8 * b) >> 8;
- curr_pixel.data.range(15,0) = Y - 128;
- curr_pixel.data.range(31,16) = Cb;
- curr_pixel.data.range(47,32) = Cr;
+ ap_uint<16> r = curr_pixel.data.range(7,0);
+ ap_uint<16> g = curr_pixel.data.range(15,8);
+ ap_uint<16> b = curr_pixel.data.range(31,16);
 
 
- stream_out_48.write(curr_pixel);
+
+
+
+ ap_int<16> Y = 16+(((r<<6)+(r<<1)+(g<<7)+g+(b<<4)+(b<<3)+b)>>8);
+ ap_int<16> Cb = 128+((-((r<<5)+(r<<2)+(r<<1))-((g<<6)+(g<<3)+(g<<1))+((b<<7)-(b<<4)))>>8);
+ ap_int<16> Cr = 128+(((r<<7)-(r<<4)-((g<<6)+(g<<5)-(g<<1))-((b<<4)+(b<<1)))>>8);
+
+
+
+
+
+ curr_pixel.data.range(7,0) = Y;
+ curr_pixel.data.range(15,8) = Cb;
+ curr_pixel.data.range(31,16) = Cr;
+
+
+ stream_out.write(curr_pixel);
 }

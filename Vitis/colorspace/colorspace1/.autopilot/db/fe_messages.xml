@@ -2,19 +2,16 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/mac/FPGA/VitisProjects/colorspace/colorspace1/csynth.tcl:17:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=color_convert_2" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/mac/FPGA/VitisProjects/colorspace/colorspace1/directives.tcl:7:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaContext="directive" ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=color_convert_2" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="colorspace/source/colorspace.cpp:74:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="colorspace/source/colorspace.cpp:85:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_ctrl_none port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="colorspace/source/colorspace.cpp:83:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=stream_in_48 register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="colorspace/source/colorspace.cpp:84:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=stream_out_48 register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="colorspace/source/colorspace.cpp:86:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=stream_in register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="colorspace/source/colorspace.cpp:87:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=stream_out register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="colorspace/source/colorspace.cpp:89:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="color_convert_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
 </xilinx:hls_fe_msgs>

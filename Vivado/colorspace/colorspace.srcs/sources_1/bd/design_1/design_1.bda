@@ -262,8 +262,8 @@
             },
             "V7": {
                 "VT": "AC",
-                "BA": "0x41E00000",
-                "HA": "0x41E0FFFF",
+                "BA": "0x40400000",
+                "HA": "0x4040FFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MA": "Data",

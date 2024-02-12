@@ -3,15 +3,15 @@
     "basicblocks": 1,
     "calls": "",
     "file": "colorspace.cpp",
-    "fileloc": 73,
-    "instructions": 102,
+    "fileloc": 84,
+    "instructions": 223,
     "loads": {
-      "L": 5
+      "L": 4
     },
     "name": "color_convert_2",
     "stores": {
-      "L": 5
+      "L": 4
     },
-    "total_instructions": 132
+    "total_instructions": 247
   }
 }
