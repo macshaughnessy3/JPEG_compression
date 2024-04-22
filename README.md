@@ -3,7 +3,7 @@
 This project implements an HLS IP for converting an input image to Run Length Encoded (RLE) Data. A decoder is also included that will save the resulting image as a JPEG file.
 This compression follows the original implementation of JPEG all the way up to RLE, but stops prior to Huffman Encoding. For this design to be a full implementation of JPEG huffman encoding is needed as well as writing to a JPEG file as described by the JEPG standard.
 
-The primary focus for this implementation is to determine how a Convolutional Neural Networks (CNN) accuraccy is effected by JPEG compression. This analysis can be seen in [my thesis]().
+The primary focus for this implementation is to determine how a Convolutional Neural Networks (CNN) accuraccy is effected by JPEG compression. This analysis can be seen in [my thesis](/Assets/thesis.pdf).
 
 ## FPGA Implementation
 
